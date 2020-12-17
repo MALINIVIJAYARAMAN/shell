@@ -40,9 +40,9 @@ STAT $? "Dependencies Download"
 
 
 INFO "Configuring Payment Startup Script "
-sed -i  -e "s/CARTHOST/cart-test.devopsb53.tk/" \
-        -e "s/USERHOST/user-test.devopsb53.tk/" \
-        -e "s/AMQPHOST/rabbitmq-test.devopsb53.tk/" \
+sed -i  -e "s/CARTHOST/cart-test.devopstrainings01.tk/" \
+        -e "s/USERHOST/user-test.devopstrainings01.tk/" \
+        -e "s/AMQPHOST/rabbitmq-test.devopstrainings01.tk/" \
         /home/roboshop/${COMPONENT}/systemd.service
 USER_UID=$(id -u roboshop)
 USER_GID=$(id -g roboshop)

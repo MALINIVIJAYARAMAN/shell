@@ -37,7 +37,7 @@ STAT $? "NodeJS Dependencies Installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
 
 INFO "Configuring Catalogue Startup Script "
-sed -i -e "s/MONGO_DNSNAME/mongo-test.devopsb53.tk/" /home/roboshop/catalogue/systemd.service
+sed -i -e "s/MONGO_DNSNAME/mongo-test.devopstrainings01.tk/" /home/roboshop/catalogue/systemd.service
 STAT $? "Startup script configuration"
 
 
