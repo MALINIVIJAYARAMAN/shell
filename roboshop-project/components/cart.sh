@@ -37,7 +37,7 @@ STAT $? "NodeJS Dependencies Installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
 
 INFO "Configuring Cart Startup Script "
-sed -i -e "s/MONGO_ENDPOINT/mongodb-test.devopsb53.tk/" -e "s/REDIS_ENDPOINT/redis-test.devopsb53.tk/" /home/roboshop/${COMPONENT}/systemd.service
+sed -i -e "s/CATALOGUE_ENDPOINT/catalogue-test.devopsb53.tk/" -e "s/REDIS_ENDPOINT/redis-test.devopsb53.tk/" /home/roboshop/${COMPONENT}/systemd.service
 STAT $? "Startup script configuration"
 
 
@@ -48,6 +48,6 @@ STAT $? "Cart SystemD Service"
 
 INFO "Starting Cart Service"
 systemctl enable ${COMPONENT} &>>$LOG_FILE
-systemctl start ${COMPONENT} &>>$LOG_FILE
+systemctl restart ${COMPONENT} &>>$LOG_FILE
 STAT $? "Cart Service Start"
 

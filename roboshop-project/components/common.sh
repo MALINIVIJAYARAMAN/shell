@@ -14,15 +14,10 @@ FAIL() {
 
 ## Verify User is root or not
 USER_ID=$(id -u)
-case $USER_ID in
-  0)
-    true ## Nothing to perform so we choosen true
-    ;;
-  *)
+if [ $USER_ID -ne 0 ]; then
     echo -e "\e[1;31m You should be a root user to perform this script\e[0m"
     exit 1
-    ;;
-esac
+fi
 
 LOG_FILE=/tmp/roboshop.log
 rm -f $LOG_FILE
